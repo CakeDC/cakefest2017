@@ -37,6 +37,7 @@ class Tournament extends Entity
     protected function _setName($name)
     {
         $this['slug'] = Text::slug(strtolower($name));
+
         return $name;
     }
 }
