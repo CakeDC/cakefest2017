@@ -8,7 +8,7 @@ use App\Controller\AppController;
  *
  * @property \App\Model\Table\MovesTable $Moves
  *
- * @method \App\Model\Entity\Move[] paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\Move[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class MovesController extends AppController
 {

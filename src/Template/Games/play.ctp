@@ -1,4 +1,7 @@
 <?php
+/**
+ * @var \App\View\AppView $this
+ */
 echo $this->Html->tag('h3', __('Game started {0}', $this->Time->timeAgoInWords($currentGame['created'])));
 $playerMoveUrl = [
     'controller' => 'Moves',

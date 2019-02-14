@@ -1,4 +1,7 @@
 <?php
+/**
+ * @var \App\View\AppView $this
+ */
 echo $this->Html->tag('h2', __('Tournaments'));
 echo '<table class="tournaments">';
 echo $this->Html->tableHeaders([

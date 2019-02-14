@@ -27,6 +27,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\Game findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * @mixin \Cake\ORM\Behavior\CounterCacheBehavior
  */
 class GamesTable extends Table
 {

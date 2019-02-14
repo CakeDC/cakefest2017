@@ -10,17 +10,19 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $email
- * @property string $password
- * @property bool $is_active
- * @property string $first_name
- * @property string $last_name
- * @property bool $is_superuser
- * @property \Cake\I18n\FrozenTime $created
- * @property \Cake\I18n\FrozenTime $modified
+ * @property string|null $password
+ * @property bool|null $is_active
+ * @property string|null $first_name
+ * @property string|null $last_name
+ * @property bool|null $is_superuser
+ * @property \Cake\I18n\FrozenTime|null $created
+ * @property \Cake\I18n\FrozenTime|null $modified
  *
  * @property \App\Model\Entity\Game[] $games
  * @property \App\Model\Entity\Move[] $moves
  * @property \App\Model\Entity\TournamentMembership[] $tournament_memberships
+ * @property int $games_count
+ * @property \App\Model\Entity\Game[] $games_won
  */
 class User extends Entity
 {

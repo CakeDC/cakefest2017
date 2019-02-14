@@ -10,6 +10,7 @@ use Cake\Network\Exception\MethodNotAllowedException;
  * @property \App\Model\Table\TournanentsTable $Tournanents
  *
  * @method \App\Model\Entity\Tournanent[] paginate($object = null, array $settings = [])
+ * @property \App\Model\Table\TournamentsTable $Tournaments
  */
 class TournamentsController extends AppController
 {

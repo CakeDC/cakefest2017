@@ -11,8 +11,8 @@ use Cake\ORM\Entity;
  * @property int $tournament_id
  * @property int $user_id
  * @property string $nick
- * @property \Cake\I18n\FrozenTime $created
- * @property \Cake\I18n\FrozenTime $modified
+ * @property \Cake\I18n\FrozenTime|null $created
+ * @property \Cake\I18n\FrozenTime|null $modified
  *
  * @property \App\Model\Entity\Tournament $tournament
  * @property \App\Model\Entity\User $user

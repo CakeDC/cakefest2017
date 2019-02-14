@@ -1,4 +1,8 @@
 <?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Game $game
+ */
 echo $this->Html->tag('h2', __('Create a new game'));
 echo $this->Form->create($game, ['url' => ['action' => 'create']]);
 echo $this->Form->control('best_of', ['type' => 'number']);

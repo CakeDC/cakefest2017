@@ -9,9 +9,9 @@ use Cake\Validation\Validator;
 /**
  * Users Model
  *
- * @property \Cake\ORM\Association\HasMany $Games
- * @property \Cake\ORM\Association\HasMany $Moves
- * @property \Cake\ORM\Association\HasMany $TournamentMemberships
+ * @property \App\Model\Table\GamesTable|\Cake\ORM\Association\HasMany $Games
+ * @property \App\Model\Table\MovesTable|\Cake\ORM\Association\HasMany $Moves
+ * @property \App\Model\Table\TournamentMembershipsTable|\Cake\ORM\Association\HasMany $TournamentMemberships
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
  * @method \App\Model\Entity\User newEntity($data = null, array $options = [])
@@ -22,6 +22,8 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\User findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * @property \App\Model\Table\GamesTable|\Cake\ORM\Association\HasMany $GamesWon
+ * @method \App\Model\Entity\User|bool saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
  */
 class UsersTable extends Table
 {

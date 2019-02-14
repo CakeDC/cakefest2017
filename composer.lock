@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3be815f0fb30ab84a5d16a200ad87236",
+    "content-hash": "ee798dc7c27543b6f9aecae472d83068",
     "packages": [
         {
             "name": "aura/intl",
@@ -1684,6 +1684,68 @@
                 "performance"
             ],
             "time": "2019-01-28T20:25:53+00:00"
+        },
+        {
+            "name": "dereuromark/cakephp-ide-helper",
+            "version": "0.13.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dereuromark/cakephp-ide-helper.git",
+                "reference": "3fadb3ffd2db446e79cf313b9f51a80353d76aa8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dereuromark/cakephp-ide-helper/zipball/3fadb3ffd2db446e79cf313b9f51a80353d76aa8",
+                "reference": "3fadb3ffd2db446e79cf313b9f51a80353d76aa8",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/bake": "^1.8.0",
+                "cakephp/cakephp": "^3.7",
+                "php": ">=5.6",
+                "sebastian/diff": "^1.4 || ^2.0 || ^3.0",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "require-dev": {
+                "dereuromark/cakephp-shim": "^1.5",
+                "dereuromark/cakephp-tools": "^1.3",
+                "fig-r/psr2r-sniffer": "dev-master"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "IdeHelper\\": "src/",
+                    "IdeHelper\\Test\\Fixture\\": "tests/Fixture/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Other contributors",
+                    "homepage": "https://github.com/dereuromark/cakephp-ide-helper/graphs/contributors",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Mark Scherer",
+                    "homepage": "https://www.dereuromark.de",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "CakePHP IdeHelper Plugin to improve auto-completion",
+            "homepage": "https://github.com/dereuromark/cakephp-ide-helper/",
+            "keywords": [
+                "annotations",
+                "autocomplete",
+                "cakephp",
+                "ide",
+                "phpdoc",
+                "phpstorm",
+                "plugin"
+            ],
+            "time": "2019-02-07T10:13:50+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

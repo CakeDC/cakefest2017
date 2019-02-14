@@ -8,7 +8,7 @@ use App\Controller\AppController;
  *
  * @property \App\Model\Table\TournamentMembershipsTable $TournamentMemberships
  *
- * @method \App\Model\Entity\TournamentMembership[] paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\TournamentMembership[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class TournamentMembershipsController extends AppController
 {

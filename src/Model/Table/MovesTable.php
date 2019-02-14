@@ -11,8 +11,8 @@ use Cake\Validation\Validator;
 /**
  * Moves Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Users
- * @property \Cake\ORM\Association\BelongsTo $Games
+ * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
+ * @property \App\Model\Table\GamesTable|\Cake\ORM\Association\BelongsTo $Games
  *
  * @method \App\Model\Entity\Move get($primaryKey, $options = [])
  * @method \App\Model\Entity\Move newEntity($data = null, array $options = [])
@@ -23,6 +23,8 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\Move findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * @method \App\Model\Entity\Move|bool saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @mixin \App\Model\Behavior\ComputerMoveBehavior
  */
 class MovesTable extends Table
 {

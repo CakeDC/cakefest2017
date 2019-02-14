@@ -9,12 +9,13 @@ use Cake\Utility\Text;
  *
  * @property int $id
  * @property string $name
- * @property \Cake\I18n\FrozenTime $expiration_date
- * @property \Cake\I18n\FrozenTime $created
- * @property \Cake\I18n\FrozenTime $modified
+ * @property \Cake\I18n\FrozenTime|null $expiration_date
+ * @property \Cake\I18n\FrozenTime|null $created
+ * @property \Cake\I18n\FrozenTime|null $modified
  *
  * @property \App\Model\Entity\Game[] $games
  * @property \App\Model\Entity\TournamentMembership[] $tournament_memberships
+ * @property string $slug
  */
 class Tournament extends Entity
 {

@@ -10,8 +10,8 @@ use Cake\Validation\Validator;
 /**
  * Tournaments Model
  *
- * @property \Cake\ORM\Association\HasMany $Games
- * @property \Cake\ORM\Association\HasMany $TournamentMemberships
+ * @property \App\Model\Table\GamesTable|\Cake\ORM\Association\HasMany $Games
+ * @property \App\Model\Table\TournamentMembershipsTable|\Cake\ORM\Association\HasMany $TournamentMemberships
  *
  * @method \App\Model\Entity\Tournament get($primaryKey, $options = [])
  * @method \App\Model\Entity\Tournament newEntity($data = null, array $options = [])
@@ -22,6 +22,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\Tournament findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * @method \App\Model\Entity\Tournament|bool saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
  */
 class TournamentsTable extends Table
 {

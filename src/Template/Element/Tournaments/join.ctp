@@ -1,4 +1,8 @@
 <?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Tournament $tournament
+ */
 $row = [$tournament->get('name')];
 if ($tournament->get('tournament_memberships') && !$tournament->getErrors()) {
     $row[] = $this->Html->link(__('Play a game'), [

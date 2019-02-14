@@ -9,8 +9,8 @@ use Cake\Validation\Validator;
 /**
  * TournamentMemberships Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Tournaments
- * @property \Cake\ORM\Association\BelongsTo $Users
+ * @property \App\Model\Table\TournamentsTable|\Cake\ORM\Association\BelongsTo $Tournaments
+ * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  *
  * @method \App\Model\Entity\TournamentMembership get($primaryKey, $options = [])
  * @method \App\Model\Entity\TournamentMembership newEntity($data = null, array $options = [])
@@ -21,6 +21,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\TournamentMembership findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * @method \App\Model\Entity\TournamentMembership|bool saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
  */
 class TournamentMembershipsTable extends Table
 {

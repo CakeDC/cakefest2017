@@ -1,4 +1,7 @@
 <?php
+/**
+ * @var \App\View\AppView $this
+ */
 echo $this->Html->tag('h2', __('Tournament stats'));
 $values = $stats->toArray() ?? [];
 echo '<dl>';
