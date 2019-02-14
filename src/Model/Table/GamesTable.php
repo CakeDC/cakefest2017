@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model\Table;
 
 use App\Model\Entity\Game;
@@ -14,14 +13,15 @@ use Cake\Validation\Validator;
 /**
  * Games Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Users
- * @property \Cake\ORM\Association\BelongsTo $Tournaments
- * @property \Cake\ORM\Association\HasMany $Moves
+ * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
+ * @property \App\Model\Table\TournamentsTable|\Cake\ORM\Association\BelongsTo $Tournaments
+ * @property \App\Model\Table\MovesTable|\Cake\ORM\Association\HasMany $Moves
  *
  * @method \App\Model\Entity\Game get($primaryKey, $options = [])
  * @method \App\Model\Entity\Game newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Game[] newEntities(array $data, array $options = [])
  * @method \App\Model\Entity\Game|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Game|bool saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
  * @method \App\Model\Entity\Game patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Game[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Game findOrCreate($search, callable $callback = null, $options = [])
@@ -77,16 +77,16 @@ class GamesTable extends Table
     {
         $validator
             ->integer('id')
-            ->allowEmpty('id', 'create');
+            ->allowEmptyString('id', 'create');
 
         $validator
             ->integer('best_of')
             ->requirePresence('best_of', 'create')
-            ->greaterThan('best_of', 0, __('Best of must be > 0'));
+            ->allowEmptyString('best_of', false);
 
         $validator
             ->boolean('is_player_winner')
-            ->allowEmpty('is_player_winner');
+            ->allowEmptyString('is_player_winner');
 
         return $validator;
     }

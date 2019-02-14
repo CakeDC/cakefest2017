@@ -6,14 +6,16 @@ use App\Strategy\RockStrategy;
 use Cake\Auth\DefaultPasswordHasher;
 use Cake\Core\Configure;
 use Cake\ORM\TableRegistry;
-use Cake\TestSuite\IntegrationTestCase;
+use Cake\TestSuite\IntegrationTestTrait;
+use Cake\TestSuite\TestCase;
 use Cake\Utility\Hash;
 
 /**
  * App\Controller\UsersController Test Case
  */
-class UsersControllerTest extends IntegrationTestCase
+class UsersControllerTest extends TestCase
 {
+    use IntegrationTestTrait;
 
     /**
      * Fixtures
@@ -21,9 +23,9 @@ class UsersControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.users',
-        'app.games',
-        'app.moves',
+        'app.Users',
+        'app.Games',
+        'app.Moves',
     ];
 
     /**
@@ -34,7 +36,7 @@ class UsersControllerTest extends IntegrationTestCase
     public function testRegister()
     {
         $email = 'john@example.com';
-        $usersTable = TableRegistry::get('Users');
+        $usersTable = TableRegistry::getTableLocator()->get('Users');
         $this->assertCount(0, $usersTable->findByEmail($email));
         $data = [
             'first_name' => 'John',
@@ -42,6 +44,7 @@ class UsersControllerTest extends IntegrationTestCase
             'email' => $email,
             'password' => 'password',
         ];
+        $this->enableCsrfToken();
         $this->post('/users/register', $data);
         $this->assertResponseSuccess();
         $this->assertRedirect('/');
@@ -63,7 +66,7 @@ class UsersControllerTest extends IntegrationTestCase
     public function testRegisterDuplicatedEmail()
     {
         $email = 'admin@example.com';
-        $usersTable = TableRegistry::get('Users');
+        $usersTable = TableRegistry::getTableLocator()->get('Users');
         $this->assertCount(1, $usersTable->findByEmail($email));
         $data = [
             'first_name' => 'John',
@@ -72,6 +75,7 @@ class UsersControllerTest extends IntegrationTestCase
             'password' => 'password',
         ];
         $this->enableRetainFlashMessages();
+        $this->enableCsrfToken();
         $this->post('/users/register', $data);
         $this->assertResponseSuccess();
         $this->assertNoRedirect();
@@ -90,6 +94,7 @@ class UsersControllerTest extends IntegrationTestCase
             'email' => 'admin@example.com',
             'password' => 'password',
         ];
+        $this->enableCsrfToken();
         $this->post('/users/login', $data);
         $this->assertResponseSuccess();
         $this->assertSession('john', 'Auth.User.first_name');
@@ -105,11 +110,11 @@ class UsersControllerTest extends IntegrationTestCase
             'game_id' => 1,
             'player_move' => 'K',
         ];
-        $movesTable = TableRegistry::get('Moves');
+        $movesTable = TableRegistry::getTableLocator()->get('Moves');
         $this->assertCount(0, $movesTable->find());
         $this->post('/moves/player-move', $data);
         $this->assertCount(1, $movesTable->find());
-        $gamesTable = TableRegistry::get('Games');
+        $gamesTable = TableRegistry::getTableLocator()->get('Games');
         $game = $gamesTable->get(1);
         $this->assertNull($game['is_player_winner']);
 

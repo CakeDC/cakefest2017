@@ -175,10 +175,10 @@ class Initial extends AbstractMigration
 
     public function down()
     {
-        $this->dropTable('games');
-        $this->dropTable('moves');
-        $this->dropTable('tournament_memberships');
-        $this->dropTable('tournaments');
-        $this->dropTable('users');
+        $this->table('games')->drop()->save();
+        $this->table('moves')->drop()->save();
+        $this->table('tournament_memberships')->drop()->save();
+        $this->table('tournaments')->drop()->save();
+        $this->table('users')->drop()->save();
     }
 }

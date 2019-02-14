@@ -7,12 +7,12 @@ use Cake\ORM\Entity;
  * Game Entity
  *
  * @property int $id
- * @property \Cake\I18n\FrozenTime $created
- * @property \Cake\I18n\FrozenTime $modified
+ * @property \Cake\I18n\FrozenTime|null $created
+ * @property \Cake\I18n\FrozenTime|null $modified
  * @property int $best_of
  * @property int $user_id
- * @property bool $is_player_winner
- * @property int $tournament_id
+ * @property bool|null $is_player_winner
+ * @property int|null $tournament_id
  *
  * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Tournament $tournament
@@ -31,8 +31,14 @@ class Game extends Entity
      * @var array
      */
     protected $_accessible = [
-        '*' => true,
-        'id' => false,
+        'created' => true,
+        'modified' => true,
+        'best_of' => true,
         'user_id' => false,
+        'is_player_winner' => true,
+        'tournament_id' => true,
+        'user' => true,
+        'tournament' => true,
+        'moves' => true
     ];
 }
