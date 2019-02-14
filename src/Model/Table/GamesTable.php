@@ -120,6 +120,7 @@ class GamesTable extends Table
         if (!$userId) {
             throw new \OutOfBoundsException('Option userId is required');
         }
+
         return $query
             ->where(['user_id' => $userId]);
     }
@@ -135,6 +136,7 @@ class GamesTable extends Table
         $isPlayerWinner = $this->_isPlayerWinner($game);
         if ($isPlayerWinner !== null) {
             $game['is_player_winner'] = $isPlayerWinner;
+
             return $this->save($game);
         }
     }

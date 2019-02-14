@@ -104,6 +104,5 @@ class TournamentsTable extends Table
             ->group('Tournaments.id')
             // only return rows if there is a matching slug
             ->where(['slug' => $slug]);
-
     }
 }

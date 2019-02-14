@@ -5,7 +5,6 @@ class Initial extends AbstractMigration
 {
     public function up()
     {
-
         $this->table('games')
             ->addColumn('created', 'datetime', [
                 'default' => null,
