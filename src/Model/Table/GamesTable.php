@@ -17,7 +17,7 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\TournamentsTable|\Cake\ORM\Association\BelongsTo $Tournaments
  * @property \App\Model\Table\MovesTable|\Cake\ORM\Association\HasMany $Moves
  *
- * @method \App\Model\Entity\Game get($primaryKey, $options = [])
+ * @method App\Model\Entity\Game get($primaryKey, $options = [])
  * @method \App\Model\Entity\Game newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Game[] newEntities(array $data, array $options = [])
  * @method \App\Model\Entity\Game|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
