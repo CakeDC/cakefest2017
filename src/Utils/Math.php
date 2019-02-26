@@ -8,23 +8,23 @@ namespace App\Utils;
 class Math
 {
     /**
-     * Format percentage of won/lost games
+     * Calculate percentage
      *
-     * @param int $won won games
-     * @param int $lost lost games
-     * @return string formatted percentage
+     * @param int $successful
+     * @param int $failed
+     * @return rounded percentage
      * @throws \OutOfBoundsException
      */
-    public static function formatStatPercentage(int $won, int $lost) : string
+    public static function roundedPercentage(int $successful, int $failed) : int
     {
-        if ($won < 0 || $lost < 0) {
+        if ($successful < 0 || $failed < 0) {
             throw new \OutOfBoundsException('Won and lost must not be < 0');
         }
-        $total = $won + $lost;
+        $total = $successful + $failed;
         if ($total === 0) {
-            return __('Play more games!');
+            return 0;
         }
 
-        return round($won / $total * 100) . '%';
+        return round($successful / $total * 100);
     }
 }
