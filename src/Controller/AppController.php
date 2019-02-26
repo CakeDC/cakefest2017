@@ -91,6 +91,8 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
-        $this->set('currentUser', $this->Auth->user());
+        if (isset($this->Auth)) {
+            $this->set('currentUser', $this->Auth->user());
+        }
     }
 }
