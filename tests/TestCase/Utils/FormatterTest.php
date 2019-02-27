@@ -74,6 +74,6 @@ class FormatterTest extends TestCase
             ->method('roundedPercentage')
             ->willReturn(50);
 
-        $this->assertEquals('50%', $formatterMock->formatStatPercentage(1,1));
+        $this->assertEquals('50%', $formatterMock->formatStatPercentage(1, 1));
     }
 }
