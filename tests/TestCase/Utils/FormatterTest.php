@@ -55,11 +55,11 @@ class FormatterTest extends TestCase
     public function formatStatPercentageViaProvider() : array
     {
         return [
-            [0,0,'Play more games!'],
-            [0,1,'Play more games!'],
-            [0,2,'Play more games!'],
-            [1,0,'100%'],
-            [2,0,'100%'],
+            [0, 0, 'Play more games!'],
+            [0, 1, 'Play more games!'],
+            [0, 2, 'Play more games!'],
+            [1, 0, '100%'],
+            [2, 0, '100%'],
         ];
     }
 }
