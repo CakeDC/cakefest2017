@@ -203,3 +203,4 @@ Type::build('timestamp')
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
 Configure::load('game');
+Configure::write('DebugKit.safeTld', ['dev', 'local', 'example', '3dev']);

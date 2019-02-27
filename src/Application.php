@@ -14,6 +14,7 @@
  */
 namespace App;
 
+use App\Middleware\ProfileTimeMiddleware;
 use Cake\Core\Configure;
 use Cake\Core\Exception\MissingPluginException;
 use Cake\Error\Middleware\ErrorHandlerMiddleware;
@@ -66,6 +67,7 @@ class Application extends BaseApplication
     public function middleware($middlewareQueue)
     {
         $middlewareQueue
+            ->add(new ProfileTimeMiddleware())
             // Catch any exceptions in the lower layers,
             // and make an error page/response
             ->add(new ErrorHandlerMiddleware(null, Configure::read('Error')))

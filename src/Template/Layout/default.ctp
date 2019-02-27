@@ -44,10 +44,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <ul class="right">
                 <li><?php
                     if (!empty($currentUser)) {
-                        echo $this->cell('Stats', [$currentUser], ['cache' => [
-                            'config' => 'default',
-                            'key' => 'totals_' . $currentUser['id'] ?? 'null',
-                        ]])->render();
+                        echo $this->cell('Stats', [$currentUser])->render();
                     }
                     ?></li>
                 <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
