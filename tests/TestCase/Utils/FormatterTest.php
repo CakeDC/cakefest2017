@@ -62,4 +62,18 @@ class FormatterTest extends TestCase
             [2, 0, '100%'],
         ];
     }
+
+    public function testMockMathDependencyAllowsIsolatedTests() : void
+    {
+        $formatterMock = $this->getMockBuilder(Formatter::class)
+            ->setMethods(['roundedPercentage'])
+            ->getMock();
+
+        $formatterMock
+            ->expects($this->once())
+            ->method('roundedPercentage')
+            ->willReturn(50);
+
+        $this->assertEquals('50%', $formatterMock->formatStatPercentage(1,1));
+    }
 }
