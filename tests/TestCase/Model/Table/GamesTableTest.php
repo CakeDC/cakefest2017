@@ -3,6 +3,7 @@ namespace App\Test\TestCase\Model\Table;
 
 use App\Model\Entity\Game;
 use App\Model\Table\GamesTable;
+use Cake\ORM\Query;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
@@ -114,9 +115,26 @@ class GamesTableTest extends TestCase
      *
      * @return void
      */
-    public function testFindOwner()
+    public function testFindOwnerShouldThrowException()
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->expectException(\OutOfBoundsException::class);
+        $this->expectExceptionMessage('Option userId is required');
+        $this->GamesTable->find('owner');
+    }
+
+    /**
+     * Test findOwner method
+     *
+     * @return void
+     */
+    public function testFindOwnerShouldReturnQuery()
+    {
+        $query = $this->GamesTable->find('owner', ['userId' => 1]);
+        $this->assertInstanceOf(Query::class, $query);
+        $countPerUserId = $query->countBy(function ($game) {
+            return $game->user_id === 1;
+        })->first();
+        $this->assertSame(5, $countPerUserId);
     }
 
     /**
