@@ -87,6 +87,15 @@ class GamesFixture extends TestFixture
                 'is_player_winner' => null,
                 'tournament_id' => null
             ],
+            [
+                'id' => 20,
+                'created' => '2017-06-06 21:35:34',
+                'modified' => '2017-06-06 21:35:34',
+                'best_of' => 3,
+                'user_id' => 2,
+                'is_player_winner' => null,
+                'tournament_id' => null
+            ],
         ];
         parent::init();
     }

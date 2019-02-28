@@ -59,15 +59,15 @@ class UsersFixture extends TestFixture
             ],
             [
                 'id' => 2,
-                'email' => '',
-                'password' => null,
+                'email' => 'jack@example.com',
+                'password' => '$2y$10$3r2YHfV3RMk24mXmHrYj7uLZ263.UQQKnWS65TbapOR4f/MoSeJb.',
                 'is_active' => true,
-                'first_name' => '',
-                'last_name' => '',
-                'is_superuser' => true,
-                'created' => '2019-02-26 23:10:32',
-                'modified' => '2019-02-26 23:10:32',
-                'games_count' => 0
+                'first_name' => 'jack',
+                'last_name' => 'smith',
+                'is_superuser' => false,
+                'created' => '2019-02-22 10:53:14',
+                'modified' => '2019-02-22 10:53:14',
+                'games_count' => 1
             ],
         ];
         parent::init();
